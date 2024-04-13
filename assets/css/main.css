@@ -2890,6 +2890,14 @@ textarea:focus::placeholder {
   font-weight: 400;
   margin-bottom: 3px;
 }
+.bostami-parsonal-info-contact-item.email a {
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    word-break: break-all;
+}
+
+
+
 .bostami-parsonal-info-contact-item .text p {
   font-size: 16px;
   line-height: 24px;
@@ -2897,6 +2905,9 @@ textarea:focus::placeholder {
   color: var(--common-black);
   text-transform: capitalize;
   margin-bottom: 0;
+}
+.bostami-parsonal-info-contact-item.email .text p {
+  text-transform: none;
 }
 @media only screen and (min-width: 1200px) and (max-width: 1399px) {
   .bostami-parsonal-info-contact-item .text p {
@@ -3305,20 +3316,29 @@ textarea:focus::placeholder {
   color: var(--theme-primary);
 }
 
-.isotop-item,
-.grid-sizer {
+.mix {
   width: 50%;
   padding: 0 10px;
 }
+
+.fillter-item-wrap {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
 @media (max-width: 767px) {
-  .isotop-item,
-  .grid-sizer {
+  .mix {
     width: 100%;
   }
 }
-
-.isotop-item > div,
-.isotop-item > div {
+.mixitup-control-active{
+  background-color: red;
+  color: #fff;
+}
+.mix > div,
+.mix > div {
   margin-bottom: 20px;
 }
 
@@ -3518,26 +3538,22 @@ textarea:focus::placeholder {
   margin-bottom: 30px;
 }
 
-.page-wrapper-2 .isotop-item,
-.page-wrapper-2 .grid-sizer {
+.page-wrapper-2 .mix{
   width: 33.33%;
   padding: 0 10px;
 }
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
-  .page-wrapper-2 .isotop-item,
-  .page-wrapper-2 .grid-sizer {
+  .page-wrapper-2 .mix {
     width: 33.33%;
   }
 }
 @media only screen and (min-width: 768px) and (max-width: 991px) {
-  .page-wrapper-2 .isotop-item,
-  .page-wrapper-2 .grid-sizer {
+  .page-wrapper-2 .mix {
     width: 50%;
   }
 }
 @media (max-width: 767px) {
-  .page-wrapper-2 .isotop-item,
-  .page-wrapper-2 .grid-sizer {
+  .page-wrapper-2 .mix {
     width: 100%;
   }
 }

@@ -81,44 +81,49 @@
                 <div class="skill-bar-item mb-30">
                     <div class="title-wrap">
                         <h5 class="title">Web Design</h5>
-                        <span class="count">85%</span>
+                        <span class="count">75%</span>
                     </div>
                     <div class="progress-bar-wrap">
-                        <div class="progress-line progress-bg-1" style="width: 85%;">
-                        </div>
+                        <div class="progress-line progress-bg-1"></div>
+                    </div>
+                </div>
+                <div class="skill-bar-item mb-30">
+                    <div class="title-wrap">
+                        <h5 class="title">Web Development</h5>
+                        <span class="count">55%</span>
+                    </div>
+                    <div class="progress-bar-wrap">
+                        <div class="progress-line progress-bg-1"></div>
                     </div>
                 </div>
 
                 <div class="skill-bar-item mb-30">
                     <div class="title-wrap">
                         <h5 class="title">Mobile App</h5>
-                        <span class="count">55%</span>
+                        <span class="count">25%</span>
                     </div>
                     <div class="progress-bar-wrap">
-                        <div class="progress-line progress-bg-2" style="width: 55%;">
-                        </div>
+                        <div class="progress-line progress-bg-2"></div>
                     </div>
                 </div>
 
                 <div class="skill-bar-item mb-30">
                     <div class="title-wrap">
                         <h5 class="title">Illustrator</h5>
-                        <span class="count">65%</span>
+                        <span class="count">20%</span>
                     </div>
                     <div class="progress-bar-wrap">
-                        <div class="progress-line progress-bg-3" style="width: 65%;">
-                        </div>
+                        <div class="progress-line progress-bg-3"></div>
                     </div>
                 </div>
 
                 <div class="skill-bar-item">
                     <div class="title-wrap">
-                        <h5 class="title">Photoshope</h5>
-                        <span class="count">72%</span>
+                        <h5 class="title">Photoshop</h5>
+                        <span class="count">20%</span>
                     </div>
                     <div class="progress-bar-wrap">
-                        <div class="progress-line progress-bg-4" style="width: 72%;">
-                        </div>
+                        <div class="progress-line progress-bg-4"></div>
                     </div>
                 </div>
 

@@ -1,7 +1,16 @@
 <!Doctype html>
 <html class="no-js" lang="zxx">
 
-<?php include 'header.php'; ?>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Bostami - Home Page One</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.png">
+
+    <?php include 'header.php'; ?>
+</head>
 
 <body>
 
@@ -22,7 +31,7 @@
                         <!-- logo -->
                         <div class="col-6">
                             <div class="bostami-header-logo">
-                                <a class="site-logo" href="https://bostami-bootstrap.ibthemespro.com/index.php">
+                                <a class="site-logo" href="index.php">
                                     <img src="assets/img/logo/logo-2.png" alt="">
                                 </a>
                             </div>
@@ -71,29 +80,29 @@
 
                             <!-- name -->
                             <h4 class="bostami-parsonal-info-name">
-                                <a href="#">Bostami Hassan</a>
+                                <a href="#">Umair Shaikh</a>
                             </h4>
-                            <span class="bostami-parsonal-info-bio mb-15">Ui/Ux Designer</span>
+                            <span class="bostami-parsonal-info-bio mb-15">Front End Developer</span>
 
                             <!-- socail link -->
                             <ul class="bostami-parsonal-info-social-link mb-30">
                                 <li>
-                                    <a href="#" class="facebook">
+                                    <a title="Facebook" href="#" class="facebook">
                                         <i class="fa-brands fa-facebook-f"></i>
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="#" class="twitter">
-                                        <i class="fa-brands fa-twitter"></i>
+                                    <a title="Codepen" href="https://codepen.io/umair7738" class="twitter">
+                                    <i class="fa-brands fa-codepen"></i>
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="#" class="instagram">
-                                        <i class="fa-brands fa-instagram"></i>
+                                    <a title="Github" href="https://github.com/umair7738" class="instagram">
+                                    <i class="fab fa-github"></i>
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="#" class="linkedin">
+                                    <a title="linkedin" href="https://www.linkedin.com/in/umair-shaikh-9b2054254" class="linkedin">
                                         <i class="fa-brands fa-linkedin-in"></i>
                                     </a>
                                 </li>
@@ -107,7 +116,11 @@
                                     </div>
                                     <div class="text">
                                         <span>Phone</span>
-                                        <p>+123 456 7890</p>
+
+                                        <a href="tel:7738635353">
+                                            <p>+91 7738635353</p>
+                                        </a>
+
                                     </div>
                                 </div>
 
@@ -118,7 +131,7 @@
                                     </div>
                                     <div class="text">
                                         <span>Email</span>
-                                        <p>example@mail.com</p>
+                                        <a href="mailto:umairshaikh7738@gmail.com"><p>umairshaikh7738@gmail.com</p></a>
                                     </div>
                                 </div>
 
@@ -128,7 +141,7 @@
                                     </div>
                                     <div class="text">
                                         <span>Location</span>
-                                        <p>Hong kong china</p>
+                                        <p>Kurla, Mumbai</p>
                                     </div>
                                 </div>
 
@@ -138,7 +151,7 @@
                                     </div>
                                     <div class="text">
                                         <span>Birthday</span>
-                                        <p>May 27, 1990</p>
+                                        <p>Dec 26, 2000</p>
                                     </div>
                                 </div>
                             </div>
@@ -160,136 +173,7 @@
 
                 <!-- about-page-start -->
                 <div class="col-xxl-8 col-xl-9">
-                    <div class="bostami-page-content-wrap">
-
-                        <!-- page title -->
-                        <div class="section-wrapper pl-60 pr-60 pt-60">
-                            <div class="bostami-page-title-wrap mb-35">
-                                <h2 class="page-title">about</h2>
-                                <p>I'm Creative Director and UI/UX Designer from Sydney, Australia, working in web
-                                    development and print media. I enjoy turning complex problems into simple, beautiful
-                                    and intuitive designs.</p>
-                                <p>My aim is to bring across your message and identity in the most creative way. I
-                                    created web design for many famous brand companies.</p>
-                            </div>
-                        </div>
-
-                        <!-- what-do -->
-                        <div class="section-wrapper pl-60 pr-60">
-
-                            <div class="bostami-section-title-wrap mb-30">
-                                <h3 class="section-title">What I do!</h3>
-                            </div>
-
-                            <div class="bostami-what-do-wrap mb-30">
-                                <div class="row">
-
-                                    <!-- single item -->
-                                    <div class="col-xxl-6 col-xl-6 col-lg-6">
-                                        <div class="bostami-what-do-item bg-prink">
-                                            <div class="icon">
-                                                <i class="fa-light fa-swatchbook"></i>
-                                            </div>
-                                            <div class="text">
-                                                <h4 class="title">Ui/Ux Design</h4>
-                                                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
-                                                    euismod tincidunt volutpat.</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- single item -->
-                                    <div class="col-xxl-6 col-xl-6 col-lg-6">
-                                        <div class="bostami-what-do-item bg-catkrill">
-                                            <div class="icon">
-                                                <i class="fa-regular fa-grid-2"></i>
-                                            </div>
-                                            <div class="text">
-                                                <h4 class="title">App Development</h4>
-                                                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
-                                                    euismod tincidunt volutpat.</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- single item -->
-                                    <div class="col-xxl-6 col-xl-6 col-lg-6">
-                                        <div class="bostami-what-do-item  bg-catkrill">
-                                            <div class="icon">
-                                                <i class="fa-regular fa-camera-retro"></i>
-                                            </div>
-                                            <div class="text">
-                                                <h4 class="title">Photography</h4>
-                                                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
-                                                    euismod tincidunt volutpat.</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- single item -->
-                                    <div class="col-xxl-6 col-xl-6 col-lg-6">
-                                        <div class="bostami-what-do-item bg-prink bg-blue">
-                                            <div class="icon">
-                                                <i class="fa-regular fa-code"></i>
-                                            </div>
-                                            <div class="text">
-                                                <h4 class="title">Web Development</h4>
-                                                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
-                                                    euismod tincidunt volutpat.</p>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                </div>
-                            </div>
-
-                        </div>
-
-                        <!-- client -->
-                        <div class="section-wrapper bg-light-white-2 pt-45 pb-60 pl-60 pr-60">
-
-                            <div class="bostami-section-title-wrap text-center mb-50">
-                                <h3 class="section-title">clinet</h3>
-                            </div>
-
-                            <div class="bostami-client-slider">
-                                <div class="swiper-container client_slide_active">
-                                    <div class="swiper-wrapper">
-
-                                        <!-- single item -->
-                                        <div class="swiper-slide">
-                                            <img class="bostami-client-slider-logo"
-                                                src="assets/img/client/client-logo-1.png" alt="">
-                                        </div>
-
-                                        <!-- single item -->
-                                        <div class="swiper-slide">
-                                            <img class="bostami-client-slider-logo"
-                                                src="assets/img/client/client-logo-2.png" alt="">
-                                        </div>
-
-                                        <!-- single item -->
-                                        <div class="swiper-slide">
-                                            <img class="bostami-client-slider-logo"
-                                                src="assets/img/client/client-logo-3.png" alt="">
-                                        </div>
-
-                                        <!-- single item -->
-                                        <div class="swiper-slide">
-                                            <img class="bostami-client-slider-logo"
-                                                src="assets/img/client/client-logo-4.png" alt="">
-                                        </div>
-
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-
-                        <!-- footer copyright -->
-                        <div class="footer-copyright text-center pt-25 pb-25">
-                            <span>© 2024 All Rights Reserved by <a href="https://themeforest.net/user/elite-themes24"
-                                    target="_blank" rel="noopener noreferrer">elite-themes24</a>.</span>
-                        </div>
-
-                    </div>
+                    <div class="bostami-page-content-wrap"></div>
                 </div>
                 <!-- about-page-end -->
 
@@ -299,7 +183,7 @@
                         <nav class="bastami-main-menu main_menu">
                             <ul>
                                 <li class="active">
-                                    <a href="index.php">
+                                    <a href="#" id="about-link">
                                         <span>
                                             <i class="fa-light fa-address-card"></i>
                                         </span>
@@ -315,7 +199,7 @@
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="portfolio.php">
+                                    <a href="#" id="portfolio-link">
                                         <span>
                                             <i class="fa-light fa-briefcase"></i>
                                         </span>
@@ -323,7 +207,7 @@
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="blog.php">
+                                    <a href="#" id="blog-link">
                                         <span>
                                             <i class="fa-light fa-newspaper"></i>
                                         </span>
@@ -331,7 +215,7 @@
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="contact.php">
+                                    <a href="#" id="contact-link">
                                         <span>
                                             <i class="fa-light fa-address-book"></i>
                                         </span>
@@ -348,28 +232,7 @@
 
     </div>
     <?php include 'footer.php'; ?>
-<script>
-    $(document).ready(function() {
-        // Handle click event on the resume link
-        $("#resume-link").click(function(e) {
-            e.preventDefault(); // Prevent the default behavior of the link
-            
-            // Perform AJAX request to load resume.php
-            $.ajax({
-                url: "resume.php", // URL of the target page
-                type: "GET", // HTTP method
-                dataType: "html", // Data type expected from the server
-                success: function(response) {
-                    // Replace the content of bostami-page-content-wrap with the loaded content
-                    $(".bostami-page-content-wrap").html(response);
-                },
-                error: function(xhr, status, error) {
-                    console.error("Error loading resume:", error);
-                }
-            });
-        });
-    });
-</script>
+
 
 </body>
 
