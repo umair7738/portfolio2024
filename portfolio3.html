@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MixItUp Gallery</title>
+  <!-- Link to Bootstrap CSS -->
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Link to MixItUp CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mixitup/dist/mixitup.min.css">
+  <style>
+    /* Custom styles for the gallery */
+    .gallery-item {
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <div class="controls mb-3">
+        <!-- Filter buttons -->
+        <button class="filter btn btn-primary" data-filter="all">All</button>
+        <button class="filter btn btn-primary" data-filter=".mockup">Mockup</button>
+        <button class="filter btn btn-primary" data-filter=".design">Graphic Design</button>
+        <button class="filter btn btn-primary" data-filter=".logo">Logo</button>
+      </div>
+    </div>
+  </div>
+  
+  <div id="gallery" class="row">
+    <!-- Gallery items -->
+    <div class="col-md-4 mix mockup gallery-item">
+      <img src="assets/img/work/work-img-1.png" alt="Mockup 1">
+      <h6>Mockup 1</h6>
+    </div>
+    <div class="col-md-4 mix design gallery-item">
+      <img src="assets/img/work/work-img-2.png" alt="Design 1">
+      <h6>Design 1</h6>
+    </div>
+    <div class="col-md-4 mix logo gallery-item">
+      <img src="assets/img/work/work-img-3.png" alt="Logo 1">
+      <h6>Logo 1</h6>
+    </div>
+    <!-- Add more items as needed -->
+  </div>
+</div>
+
+<!-- Link to jQuery (required) -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<!-- Link to MixItUp -->
+<script src="https://cdn.jsdelivr.net/npm/mixitup/dist/mixitup.min.js"></script>
+
+<script>
+  // Initialize MixItUp
+  var mixer = mixitup('#gallery');
+  
+  // Filter buttons click event
+  $('.filter').on('click', function() {
+    var filterValue = $(this).attr('data-filter');
+    mixer.filter(filterValue);
+  });
+</script>
+
+</body>
+</html>
