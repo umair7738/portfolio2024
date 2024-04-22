@@ -7,6 +7,7 @@
     <!-- <script src="assets/js/isotope.pkgd.min.js"></script> -->
     <script src="https://cdn.jsdelivr.net/npm/mixitup/dist/mixitup.min.js"></script>
     <script src="assets/js/odometer.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
     <!-- <script src="assets/js/jquery.modal.min.js"></script> -->
     <script src="assets/js/appear.min.js"></script>
     <script src="assets/js/main.js"></script>
