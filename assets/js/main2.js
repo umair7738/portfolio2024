@@ -1,14 +1,23 @@
 $(document).ready(function () {
     // Function to load page content
-    function loadPageContent(pageUrl) {
+    function loadPageContent(pageUrl, hash) {
         $.ajax({
             url: pageUrl,
             type: "GET",
             dataType: "html",
             success: function (response) {
+                // Update the URL hash and navigation active state
+                window.location.hash = hash;
+                $("nav ul li").removeClass("active");
+                $("#" + hash + "-link").parent("li").addClass("active");
+
+                // Replace the content of bostami-page-content-wrap with the loaded content
                 $(".bostami-page-content-wrap").html(response);
-                // Initialize Swiper after loading the content
-                initializeSwiper();
+
+                // Initialize Swiper if needed
+                if (hash === "about") {
+                    initializeSwiper();
+                }
             },
             error: function (xhr, status, error) {
                 console.error("Error loading page content:", error);
@@ -19,16 +28,15 @@ $(document).ready(function () {
     // Handle click event on the about link
     $("#about-link").click(function (e) {
         e.preventDefault();
-        $("nav ul li").removeClass("active");
-        $(this).parent("li").addClass("active");
-        loadPageContent("about.php");
+        loadPageContent("about.php", "about");
     });
 
-    // Load about.php content initially
-    loadPageContent("about.php");
-});
+    // Load about.php content initially if there's no hash in the URL
+    if (!window.location.hash) {
+        loadPageContent("about.php", "about");
+    }
 
-// Function to initialize Swiper
+// Functions
 function initializeSwiper() {
     if (jQuery(".client_slide_active").length > 0) {
         let swiperBrand = new Swiper(".client_slide_active", {
@@ -63,146 +71,6 @@ function initializeSwiper() {
     }
 }
 
-
-$(document).ready(function () {
-    function updateSkillBars() {
-        $(".skill-bar-item").each(function () {
-            // Find the .count span within the current .skill-bar-item
-            var countSpan = $(this).find(".count");
-
-            // Get the text content of the count span and set it as the data-count attribute
-            var countNumber = countSpan.text();
-            countSpan.attr("data-count", countNumber);
-
-            // Get the numeric value from the count number (remove the percentage sign)
-            var countPercent = parseFloat(countNumber.replace("%", ""));
-
-            // Find the .progress-line element within the current .skill-bar-item
-            var progressBar = $(this).find(".progress-line");
-
-            // Set the width of the progress line based on the countPercent
-            progressBar.css("width", countPercent + "%");
-        });
-    }
-
-
-    // Handle click event on the resume link
-    $("#resume-link").click(function (e) {
-        e.preventDefault();
-        $("nav ul li").removeClass("active");
-        $(this).parent("li").addClass("active");
-        $.ajax({
-            url: "resume.php",
-            type: "GET",
-            dataType: "html",
-            success: function (response) {
-                $(".bostami-page-content-wrap").html(response);
-                // Call the function to update skill bars after loading the content
-                updateSkillBars();
-            },
-            error: function (xhr, status, error) {
-                console.error("Error loading resume:", error);
-            }
-        });
-    });
-
-    // Call the function to update skill bars when the document is ready
-    updateSkillBars();
-});
-
-$(document).ready(function () {
-    // Function to load portfolio content
-    function loadPortfolioContent() {
-        // Perform AJAX request to load portfolio2.php
-        $.ajax({
-            url: "portfolio2.php", // URL of the target page
-            type: "GET", // HTTP method
-            dataType: "html", // Data type expected from the server
-            success: function (response) {
-                // Replace the content of bostami-page-content-wrap with the loaded content
-                $(".bostami-page-content-wrap").html(response);
-
-                // Initialize MixItUp after loading the portfolio content
-                var mixer = mixitup('#gallery');
-
-                // Update the URL hash to indicate that portfolio content is displayed
-                window.location.hash = "portfolio";
-                $("nav ul li").removeClass("active");
-                $("#portfolio-link").parent("li").addClass("active");
-            },
-            error: function (xhr, status, error) {
-                console.error("Error loading portfolio content:", error);
-            }
-        });
-    }
-
-    // Handle click event on the portfolio link
-    $("#portfolio-link").click(function (e) {
-        e.preventDefault(); // Prevent the default behavior of the link
-        $("nav ul li").removeClass("active");
-        $(this).parent("li").addClass("active");
-        // Call the function to load portfolio content
-        loadPortfolioContent();
-    });
-
-    // Function to load portfolio content when the page loads
-    function loadPortfolioFromHash() {
-        // Check if the URL hash indicates portfolio content
-        if (window.location.hash === "#portfolio") {
-            // Call the function to load portfolio content
-            loadPortfolioContent();
-        }
-    }
-
-    // Call loadPortfolioFromHash when the page loads
-    loadPortfolioFromHash();
-});
-
-
-// $(document).ready(function() {
-//     // Handle click event on the resume link
-//     $("#portfolio-link").click(function(e) {
-//         e.preventDefault(); // Prevent the default behavior of the link
-//         $("nav ul li").removeClass("active");
-//         $(this).parent("li").addClass("active");
-//         // Perform AJAX request to load resume.php
-//         $.ajax({
-//             url: "portfolio2.php", // URL of the target page
-//             type: "GET", // HTTP method
-//             dataType: "html", // Data type expected from the server
-//             success: function(response) {
-//                 // Replace the content of bostami-page-content-wrap with the loaded content
-//                 $(".bostami-page-content-wrap").html(response);
-//             },
-//             error: function(xhr, status, error) {
-//                 console.error("Error loading resume:", error);
-//             }
-//         });
-//     });
-// });
-
-$(document).ready(function () {
-    // Handle click event on the resume link
-    $("#blog-link").click(function (e) {
-        e.preventDefault(); // Prevent the default behavior of the link
-        $("nav ul li").removeClass("active");
-        $(this).parent("li").addClass("active");
-        // Perform AJAX request to load resume.php
-        $.ajax({
-            url: "blog.php", // URL of the target page
-            type: "GET", // HTTP method
-            dataType: "html", // Data type expected from the server
-            success: function (response) {
-                // Replace the content of bostami-page-content-wrap with the loaded content
-                $(".bostami-page-content-wrap").html(response);
-                blogslider();
-            },
-            error: function (xhr, status, error) {
-                console.error("Error loading resume:", error);
-            }
-        });
-    });
-});
 function blogslider() {
     if (jQuery(".blog-slider-active").length > 0) {
         let acooterbrand = new Swiper(".blog-slider-active", {
@@ -218,29 +86,29 @@ function blogslider() {
         });
     }
 }
-$(document).ready(function () {
-    // Handle click event on the resume link
-    $("#contact-link").click(function (e) {
-        e.preventDefault(); // Prevent the default behavior of the link
-        $("nav ul li").removeClass("active");
-        $(this).parent("li").addClass("active");
-        // Perform AJAX request to load resume.php
-        $.ajax({
-            url: "contact.php", // URL of the target page
-            type: "GET", // HTTP method
-            dataType: "html", // Data type expected from the server
-            success: function (response) {
-                // Replace the content of bostami-page-content-wrap with the loaded content
-                $(".bostami-page-content-wrap").html(response);
-                forminputs();
-            },
-            error: function (xhr, status, error) {
-                console.error("Error loading resume:", error);
-            }
-        });
+
+// $(document).ready(function () {
+function updateSkillBars() {
+    $(".skill-bar-item").each(function () {
+        // Find the .count span within the current .skill-bar-item
+        var countSpan = $(this).find(".count");
+
+        // Get the text content of the count span and set it as the data-count attribute
+        var countNumber = countSpan.text();
+        countSpan.attr("data-count", countNumber);
+
+        // Get the numeric value from the count number (remove the percentage sign)
+        var countPercent = parseFloat(countNumber.replace("%", ""));
+
+        // Find the .progress-line element within the current .skill-bar-item
+        var progressBar = $(this).find(".progress-line");
+
+        // Set the width of the progress line based on the countPercent
+        progressBar.css("width", countPercent + "%");
     });
-});
-function forminputs() {
+}
+
+function initializeContactForm() {
     $(".input-box.name").click(function () {
         $(".input-box.name").addClass("height");
         $(".input-box.name").css("borderBottom", "1px solid #FE7878");
@@ -259,3 +127,131 @@ function forminputs() {
         $(".input-lebel.message").css("color", "#CE65F3");
     });
 }
+
+
+    // Function to load portfolio content
+    function loadPortfolioContent() {
+        $.ajax({
+            url: "portfolio2.php",
+            type: "GET",
+            dataType: "html",
+            success: function (response) {
+                window.location.hash = "portfolio";
+                $("nav ul li").removeClass("active");
+                $("#portfolio-link").parent("li").addClass("active");
+                $(".bostami-page-content-wrap").html(response);
+                var mixer = mixitup('#gallery');
+            },
+            error: function (xhr, status, error) {
+                console.error("Error loading portfolio content:", error);
+            }
+        });
+    }
+
+    // Function to load resume content
+    function loadResumeContent() {
+        $.ajax({
+            url: "resume.php",
+            type: "GET",
+            dataType: "html",
+            success: function (response) {
+                window.location.hash = "resume";
+                $("nav ul li").removeClass("active");
+                $("#resume-link").parent("li").addClass("active");
+                $(".bostami-page-content-wrap").html(response);
+                updateSkillBars();
+            },
+            error: function (xhr, status, error) {
+                console.error("Error loading resume:", error);
+            }
+        });
+    }
+
+    // Function to load blog content
+    function loadBlogContent() {
+        $.ajax({
+            url: "blog.php",
+            type: "GET",
+            dataType: "html",
+            success: function (response) {
+                window.location.hash = "blog";
+                $("nav ul li").removeClass("active");
+                $("#blog-link").parent("li").addClass("active");
+                $(".bostami-page-content-wrap").html(response);
+                blogslider();
+            },
+            error: function (xhr, status, error) {
+                console.error("Error loading blog content:", error);
+            }
+        });
+    }
+
+    // Function to load contact content
+    function loadContactContent() {
+        $.ajax({
+            url: "contact.php",
+            type: "GET",
+            dataType: "html",
+            success: function (response) {
+                window.location.hash = "contact";
+                $("nav ul li").removeClass("active");
+                $("#contact-link").parent("li").addClass("active");
+                $(".bostami-page-content-wrap").html(response);
+                initializeContactForm();
+            },
+            error: function (xhr, status, error) {
+                console.error("Error loading contact content:", error);
+            }
+        });
+    }
+
+    // Handle click events for different page links
+    $("#portfolio-link").click(function (e) {
+        e.preventDefault();
+        loadPortfolioContent();
+    });
+
+    $("#resume-link").click(function (e) {
+        e.preventDefault();
+        loadResumeContent();
+    });
+
+    $("#blog-link").click(function (e) {
+        e.preventDefault();
+        loadBlogContent();
+    });
+
+    $("#contact-link").click(function (e) {
+        e.preventDefault();
+        loadContactContent();
+    });
+
+    // Function to load page content based on hash
+    function loadPageFromHash() {
+        var hash = window.location.hash;
+        switch (hash) {
+            case "#about":
+                loadPageContent("about.php", "about");
+                break;
+            case "#portfolio":
+                loadPortfolioContent();
+                break;
+            case "#resume":
+                loadResumeContent();
+                break;
+            case "#blog":
+                loadBlogContent();
+                break;
+            case "#contact":
+                loadContactContent();
+                break;
+            // default:
+            //     // Load default page (about.php)
+            //     loadPageContent("about.php", "about");
+            //     break;
+        }
+    }
+
+    // Call loadPageFromHash when the page loads
+    loadPageFromHash();
+});

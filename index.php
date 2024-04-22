@@ -32,7 +32,9 @@
                         <div class="col-6">
                             <div class="bostami-header-logo">
                                 <a class="site-logo" href="index.php">
-                                    <img src="assets/img/logo/logo-2.png" alt="">
+                                    <span class="logo-name">UMAIR</span>
+                                    <span class="logo-slogan">WEB DEVELOPER</span>
+                                    <!-- <img src="assets/img/logo/logo-2.png" alt=""> -->
                                 </a>
                             </div>
                         </div>
@@ -75,7 +77,7 @@
 
                             <!-- img -->
                             <div class="bostami-parsonal-info-img">
-                                <img src="assets/img/parsonal-info/parson-img-1.png" alt="avatar">
+                                <img src="assets/img/parsonal-info/dummy-profile-pic.jpg" alt="avatar">
                             </div>
 
                             <!-- name -->

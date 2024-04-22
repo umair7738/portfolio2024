@@ -3957,7 +3957,9 @@ textarea:focus::placeholder {
 .contact-form .input-box:is(.height) {
   height: 40px;
 }
-
+.dark-theme .contact-form .input-box {
+  color: white;
+}
 .bostami-contact-item {
   display: flex;
   gap: 20px;
