@@ -119,8 +119,8 @@
                                     <div class="text">
                                         <span>Phone</span>
 
-                                        <a href="tel:7738635353">
-                                            <p>+91 7738635353</p>
+                                        <a href="tel:7738635355">
+                                            <p>+91 7738635355</p>
                                         </a>
 
                                     </div>
