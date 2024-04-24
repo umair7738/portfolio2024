@@ -1,5 +1,6 @@
     <!-- JS here -->
     <script src="assets/js/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
     <script src="assets/js/bootstrap.bundle.min.js"></script>
     <script src="assets/js/swipper-bundle.min.js"></script>
     <script src="assets/js/jquery.meanmenu.min.js"></script>

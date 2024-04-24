@@ -1,29 +1,52 @@
 $(document).ready(function () {
     // Function to load page content
     function loadPageContent(pageUrl, hash) {
-        $.ajax({
-            url: pageUrl,
-            type: "GET",
-            dataType: "html",
-            success: function (response) {
-                // Update the URL hash and navigation active state
-                window.location.hash = hash;
-                $("nav ul li").removeClass("active");
-                $("#" + hash + "-link").parent("li").addClass("active");
+    console.log("Loading page content...");
 
-                // Replace the content of bostami-page-content-wrap with the loaded content
-                $(".bostami-page-content-wrap").html(response);
+    // Add class to initiate transition animation
+    $(".bostami-page-content-wrap").addClass("flip-out");
 
-                // Initialize Swiper if needed
-                if (hash === "about") {
-                    initializeSwiper();
-                }
-            },
-            error: function (xhr, status, error) {
-                console.error("Error loading page content:", error);
-            }
-        });
-    }
+    $.ajax({
+        url: pageUrl,
+        type: "GET",
+        dataType: "html",
+        beforeSend: function () {
+            console.log("Before sending AJAX request...");
+        },
+        success: function (response) {
+            console.log("AJAX request successful!");
+
+            // Update the URL hash and navigation active state
+            window.location.hash = hash;
+            $("nav ul li").removeClass("active");
+            $("#" + hash + "-link").parent("li").addClass("active");
+
+            // Use GSAP for page transition animation
+            gsap.to(".bostami-page-content-wrap", {
+                rotationY: 0,
+                duration: 0.5,
+                onComplete: function () {
+                    console.log("Animation completed!");
+
+                    // Replace the content of bostami-page-content-wrap with the loaded content
+                    $(".bostami-page-content-wrap").html(response);
+
+                    // Use GSAP to flip back and fade in the content
+                    gsap.from(".bostami-page-content-wrap", {
+                        rotationY: 360,
+                        opacity: 0,
+                        duration: 0.5,
+                    });
+                },
+            });
+        },
+        error: function (xhr, status, error) {
+            console.error("Error loading page content:", error);
+        }
+    });
+}
+
+    
 
     // Handle click event on the about link
     $("#about-link").click(function (e) {

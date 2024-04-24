@@ -3,10 +3,10 @@
 ************
 *************************
 
-Template Name: Name - Bostami - HTML Personal Portfolio Template
-Description: Bostami – HTML Personal Portfolio Template can be used for many purposes. It’s a creative, minimal and clean design.It’s suitable for Designer, Developer, Specialist, Content Writer, Instructor, Photographer, Freelancer, Software Engineer, Teacher or others expert who Show their professional projects and services in digital way. It’s 100% responsive and Ultra Super Fast beacause it’s made with Latest html
-Author: elite-themes
-Version: 1.0
+Template Name: Name - Umair - HTML Personal Portfolio Template
+Description: Umair – HTML Personal Portfolio Template can be used for many purposes.
+It’s a creative, minimal and clean design.It’s suitable for Designer, Developer, Specialist, Content Writer, Instructor, Photographer, Freelancer, Software Engineer, Teacher or others expert who Show their professional projects and services in digital way. 
+It’s 100% responsive and Ultra Super Fast beacause it’s made with Latest html
 
 -----------------------------------------------------------------------------------
 
@@ -67,6 +67,15 @@ CSS INDEX
   --prink: #fff4f4;
   --catkrill: #eef5fa;
 }
+.bostami-page-content-wrap {
+  opacity: 1;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.fade-out {
+  opacity: 0;
+}
+
 
 body {
   font-family: "Poppins", sans-serif;
