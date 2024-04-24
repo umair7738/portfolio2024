@@ -115,10 +115,10 @@ function initializeContactForm() {
         $(".input-lebel.name").css("color", "#FE7878");
     });
 
-    $(".input-box.gmail").click(function () {
-        $(".input-box.gmail").addClass("height");
-        $(".input-box.gmail").css("borderBottom", "1px solid #1B74E4");
-        $(".input-lebel.gmail").css("color", "#1B74E4");
+    $(".input-box.email").click(function () {
+        $(".input-box.email").addClass("height");
+        $(".input-box.email").css("borderBottom", "1px solid #1B74E4");
+        $(".input-lebel.email").css("color", "#1B74E4");
     });
 
     $(".input-box.message").click(function () {
@@ -140,7 +140,7 @@ function initializeContactForm() {
                 $("nav ul li").removeClass("active");
                 $("#portfolio-link").parent("li").addClass("active");
                 $(".bostami-page-content-wrap").html(response);
-                var mixer = mixitup('#gallery');
+                mixitup('#gallery');
             },
             error: function (xhr, status, error) {
                 console.error("Error loading portfolio content:", error);

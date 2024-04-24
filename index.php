@@ -4,10 +4,11 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Bostami - Home Page One</title>
+    <title>Umair - Web Developer</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.png">
+    <link rel="shortcut icon" type="image/x-icon" href="assets/img/logo-umair-portfolio-icon2.png">
 
     <?php include 'header.php'; ?>
 </head>
@@ -84,7 +85,7 @@
                             <h4 class="bostami-parsonal-info-name">
                                 <a href="#">Umair Shaikh</a>
                             </h4>
-                            <span class="bostami-parsonal-info-bio mb-15">Front End Developer</span>
+                            <span class="bostami-parsonal-info-bio mb-15">Web Developer</span>
 
                             <!-- socail link -->
                             <ul class="bostami-parsonal-info-social-link mb-30">

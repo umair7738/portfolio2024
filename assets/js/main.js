@@ -79,111 +79,111 @@
   // dark mood end
 
   //  client slider start
-  if (jQuery(".client_slide_active").length > 0) {
-    let acooterbrand = new Swiper(".client_slide_active", {
-      slidesPerView: 4,
-      loop: true,
-      rtl: false,
-      infinite: true,
-      autoplay: {
-        delay: 4000,
-      },
+  // if (jQuery(".client_slide_active").length > 0) {
+  //   let acooterbrand = new Swiper(".client_slide_active", {
+  //     slidesPerView: 4,
+  //     loop: true,
+  //     rtl: false,
+  //     infinite: true,
+  //     autoplay: {
+  //       delay: 4000,
+  //     },
 
-      breakpoints: {
-        0: {
-          slidesPerView: 2,
-        },
-        480: {
-          slidesPerView: 2,
-        },
-        576: {
-          slidesPerView: 2,
-        },
-        768: {
-          slidesPerView: 3,
-        },
-        992: {
-          slidesPerView: 4,
-        },
-        1200: {
-          slidesPerView: 5,
-        },
-      },
-    });
-  }
+  //     breakpoints: {
+  //       0: {
+  //         slidesPerView: 2,
+  //       },
+  //       480: {
+  //         slidesPerView: 2,
+  //       },
+  //       576: {
+  //         slidesPerView: 2,
+  //       },
+  //       768: {
+  //         slidesPerView: 3,
+  //       },
+  //       992: {
+  //         slidesPerView: 4,
+  //       },
+  //       1200: {
+  //         slidesPerView: 5,
+  //       },
+  //     },
+  //   });
+  // }
   // client slider end
 
   // portfolio fillter start
-  function enableMasonry2() {
-    // ----------------------------- isotop gallery
+  // function enableMasonry2() {
+  //   // ----------------------------- isotop gallery
 
-    $(window).on("load", function () {
-      if ($("#fillter-item-active").length) {
-        var $grid = $("#fillter-item-active").isotope({
-          // options
-          itemSelector: ".isotop-item",
-          percentPosition: true,
-          masonry: {
-            // use element for option
-            columnWidth: ".grid-sizer",
-          },
-        });
+  //   $(window).on("load", function () {
+  //     if ($("#fillter-item-active").length) {
+  //       var $grid = $("#fillter-item-active").isotope({
+  //         // options
+  //         itemSelector: ".isotop-item",
+  //         percentPosition: true,
+  //         masonry: {
+  //           // use element for option
+  //           columnWidth: ".grid-sizer",
+  //         },
+  //       });
 
-        // filter items on button click
-        $(".isotop-menu-wrapper").on("click", "li", function () {
-          var filterValue = $(this).attr("data-filter");
-          $grid.isotope({ filter: filterValue });
-        });
+  //       // filter items on button click
+  //       $(".isotop-menu-wrapper").on("click", "li", function () {
+  //         var filterValue = $(this).attr("data-filter");
+  //         $grid.isotope({ filter: filterValue });
+  //       });
 
-        // change is-checked class on buttons
-        $(".isotop-menu-wrapper").each(function (i, buttonGroup) {
-          var $buttonGroup = $(buttonGroup);
-          $buttonGroup.on("click", "li", function () {
-            $buttonGroup.find(".is-checked").removeClass("is-checked");
-            $(this).addClass("is-checked");
-          });
-        });
-      }
-    });
-  }
+  //       // change is-checked class on buttons
+  //       $(".isotop-menu-wrapper").each(function (i, buttonGroup) {
+  //         var $buttonGroup = $(buttonGroup);
+  //         $buttonGroup.on("click", "li", function () {
+  //           $buttonGroup.find(".is-checked").removeClass("is-checked");
+  //           $(this).addClass("is-checked");
+  //         });
+  //       });
+  //     }
+  //   });
+  // }
 
-  enableMasonry2();
+  // enableMasonry2();
   // portfolio filter end
 
   // blog slider start
-  if (jQuery(".blog-slider-active").length > 0) {
-    let acooterbrand = new Swiper(".blog-slider-active", {
-      slidesPerView: 1,
-      loop: true,
-      rtl: false,
-      infinite: true,
-      autoplay: false,
-      pagination: {
-        el: ".blog-progation",
-        clickable: true,
-      },
-    });
-  }
+  // if (jQuery(".blog-slider-active").length > 0) {
+  //   let acooterbrand = new Swiper(".blog-slider-active", {
+  //     slidesPerView: 1,
+  //     loop: true,
+  //     rtl: false,
+  //     infinite: true,
+  //     autoplay: false,
+  //     pagination: {
+  //       el: ".blog-progation",
+  //       clickable: true,
+  //     },
+  //   });
+  // }
   // blog slider end
 
   // contact form
-  $(".input-box.name").click(function () {
-    $(".input-box.name").addClass("height");
-    $(".input-box.name").css("borderBottom", "1px solid #FE7878");
-    $(".input-lebel.name").css("color", "#FE7878");
-  });
+  // $(".input-box.name").click(function () {
+  //   $(".input-box.name").addClass("height");
+  //   $(".input-box.name").css("borderBottom", "1px solid #FE7878");
+  //   $(".input-lebel.name").css("color", "#FE7878");
+  // });
 
-  $(".input-box.gmail").click(function () {
-    $(".input-box.gmail").addClass("height");
-    $(".input-box.gmail").css("borderBottom", "1px solid #1B74E4");
-    $(".input-lebel.gmail").css("color", "#1B74E4");
-  });
+  // $(".input-box.gmail").click(function () {
+  //   $(".input-box.gmail").addClass("height");
+  //   $(".input-box.gmail").css("borderBottom", "1px solid #1B74E4");
+  //   $(".input-lebel.gmail").css("color", "#1B74E4");
+  // });
 
-  $(".input-box.message").click(function () {
-    $(".input-box.message").addClass("height");
-    $(".input-box.message").css("borderBottom", "1px solid #CE65F3");
-    $(".input-lebel.message").css("color", "#CE65F3");
-  });
+  // $(".input-box.message").click(function () {
+  //   $(".input-box.message").addClass("height");
+  //   $(".input-box.message").css("borderBottom", "1px solid #CE65F3");
+  //   $(".input-lebel.message").css("color", "#CE65F3");
+  // });
   // contact form end
 
   // data background
@@ -195,13 +195,13 @@
   });
 
   //   odometer
-  $(".odometer").appear(function (e) {
-    var odo = $(".odometer");
-    odo.each(function () {
-      var countNumber = $(this).attr("data-count");
-      $(this).html(countNumber);
-    });
-  });
+  // $(".odometer").appear(function (e) {
+  //   var odo = $(".odometer");
+  //   odo.each(function () {
+  //     var countNumber = $(this).attr("data-count");
+  //     $(this).html(countNumber);
+  //   });
+  // });
 
   // WOW active
   new WOW().init();

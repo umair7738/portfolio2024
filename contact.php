@@ -10,7 +10,8 @@
     <div class="contact-area bg-light-white-2">
         <h5 class="contact-title">I'm always open to discussing produuct</h5>
         <h5 class="contact-title-b">design work or partnerships.</h5>
-        <form id="contactForm" class="contact-form" action="https://formspree.io/f/xleqapod" method="post">
+        <form id="contactForm" class="contact-form" action="save_data.php" method="post">
+        <!-- <form id="contactForm" class="contact-form" action="https://formspree.io/f/xleqapod" method="post"> -->
             <div class="form-input-item mb-60">
                 <label class="input-lebel name">Name *</label>
                 <input id="nameInput" name="name" class="input-box name" type="text" required>
