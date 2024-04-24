@@ -58,7 +58,7 @@
     } else {
       darktoggle.src = "assets/img/icon/mon-icon.png";
       home1bgimg.style.backgroundImage = "url('assets/img/bg/page-bg-1.jpg')";
-      home2bgimg.style.backgroundImage = "url('assets/img/bg/page-bg-1.jpg')";
+      // home2bgimg.style.backgroundImage = "url('assets/img/bg/page-bg-1.jpg')";
     }
   }
   // Check if the user preference is already stored in local storage

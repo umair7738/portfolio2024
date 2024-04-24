@@ -1,38 +1,77 @@
 <?php
-// Database connection parameters
-$servername = "localhost";
-$username = "root"; // Replace with your database username
-$password = ""; // Replace with your database password
-$dbname = "umair7738_portfolio"; // Replace with your database name
+// Function to sanitize form data
+function sanitize_input($data) {
+    $data = trim($data);
+    $data = stripslashes($data);
+    $data = htmlspecialchars($data);
+    return $data;
+}
 
-// Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
+// Connect to MySQL database
+$conn = new mysqli('localhost', 'root', '', 'umair7738_portfolio');
 
 // Check connection
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-// Prepare SQL statement to insert data into the database
-$sql = "INSERT INTO portfolio_form (name, email, message) VALUES (?, ?, ?)";
+// Get and sanitize form data
+$name = sanitize_input($_POST['name']);
+$email = sanitize_input($_POST['email']);
+$message = sanitize_input($_POST['message']);
 
-// Prepare and bind parameters
-$stmt = $conn->prepare($sql);
-$stmt->bind_param("sss", $name, $email, $message);
+// Validate form data
+if (empty($name) || empty($email) || empty($message)) {
+    die("Error: Please fill in all fields");
+}
 
-// Get form data from POST request
-$name = $_POST['name'];
-$email = $_POST['email'];
-$message = $_POST['message'];
+// Prepare SQL statement
+$sql = "INSERT INTO portfolio_form (name, email, message) VALUES ('$name', '$email', '$message')";
 
 // Execute SQL statement
-if ($stmt->execute()) {
-    echo "Form data saved successfully!";
+if ($conn->query($sql) === TRUE) {
+    // Send email using Sendinblue's SMTP API with cURL
+    $sender_name = "Enquiry Portfolio";
+    $sender_email = "umairshaikh7738@gmail.com";
+    $to = "umairshaikh7738@gmail.com"; // Replace with the recipient's email address
+    $subject = "New Form Submission From Portfolio";
+    $body = "Name: $name\nEmail: $email\nMessage: $message";
+
+    $apiKey = "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"; // Replace with your Sendinblue API key
+
+    $url = "https://api.sendinblue.com/v3/smtp/email";
+    $data = [
+        "sender" => ["name" => $sender_name, "email" => $sender_email],
+        "to" => [["email" => $to]],
+        "subject" => $subject,
+        "htmlContent" => nl2br($body)
+    ];
+
+    $headers = [
+        "Accept: application/json",
+        "Content-Type: application/json",
+        "api-key: $apiKey"
+    ];
+
+    $ch = curl_init();
+    curl_setopt($ch, CURLOPT_URL, $url);
+    curl_setopt($ch, CURLOPT_POST, true);
+    curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($data));
+    curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+
+    $response = curl_exec($ch);
+    curl_close($ch);
+
+    if ($response !== false) {
+        echo "Email sent successfully";
+    } else {
+        echo "Failed to send email";
+    }
 } else {
     echo "Error: " . $sql . "<br>" . $conn->error;
 }
 
-// Close statement and database connection
-$stmt->close();
+// Close database connection
 $conn->close();
 ?>
