@@ -1,4 +1,7 @@
 <?php
+// Include the configuration file
+require_once 'config.php';
+
 // Function to sanitize form data
 function sanitize_input($data) {
     $data = trim($data);
@@ -37,7 +40,7 @@ if ($conn->query($sql) === TRUE) {
     $subject = "New Form Submission From Portfolio";
     $body = "Name: $name\nEmail: $email\nMessage: $message";
 
-    $apiKey = "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"; // Replace with your Sendinblue API key
+    $apiKey = SENDINBLUE_API_KEY; // Replace with your Sendinblue API key in config.php file
 
     $url = "https://api.sendinblue.com/v3/smtp/email";
     $data = [
