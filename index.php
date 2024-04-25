@@ -174,11 +174,11 @@
                 </div>
                 <!-- personal-info-end -->
 
-                <!-- about-page-start -->
+                <!-- page-start -->
                 <div class="col-xxl-8 col-xl-9">
                     <div class="bostami-page-content-wrap"></div>
                 </div>
-                <!-- about-page-end -->
+                <!--page-end -->
 
                 <!-- main-menu-start -->
                 <div class="col-xxl-1 d-xxl-block d-none">

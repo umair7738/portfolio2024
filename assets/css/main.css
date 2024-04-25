@@ -69,11 +69,16 @@ CSS INDEX
 }
 .bostami-page-content-wrap {
   opacity: 1;
-  transition: opacity 0.5s ease-in-out;
+  transition: opacity 1s ease-in-out;
 }
 
 .fade-out {
   opacity: 0;
+  transition: opacity 0.2s ease-in-out;
+}
+.fade-in {
+  opacity: 1;
+  transition: opacity 0.2s ease-in-out;
 }
 
 
